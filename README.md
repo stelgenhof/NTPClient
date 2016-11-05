@@ -1,8 +1,8 @@
-## NTPClient
+# NTPClient
 
 A simple and small NTP Client library to have date and time on your ESP8266 device synchronized periodically, supporting timezones.
 
-For Internet connected devices like the ESP8266, Arduino, etc. having a correct time and date for your project can be essential. For these devices plenty of good NTP libraries are available, however most of these contain too many  features. In addition, supporting timezones (i.e. UTC offsets) are often implemented poorly.
+For Internet connected devices like the ESP8266, Arduino, etc. having a correct time and date for your project can be essential. For these devices plenty of good NTP libraries are available, however most of these contain too many features. In addition, supporting timezones (i.e. UTC offsets) are often implemented poorly.
 
 This NTPClient library makes use of the internal Espressif SDK routines for the built in SNTP API, allowing this client to be small and simple. Unfortunately the timezone implementation of the SNTP API is limited in that only UTC offsets between -11 and 13 hour offsets can be used. Currently UTC offsets range from -12 to 14 hours including some timezones that are not a full hour (e.g. 05:30, 05:45). This NTPClient library overcomes that and fully supports all known timezones.
 
@@ -21,21 +21,24 @@ For more advanced use, a callback function may be used to handle some events emi
 
 A full working example is included in the examples folder.
 
-## Disclaimer
+Making this library was heavily inspired by the wonderful [NTPClient Library](https://github.com/gmag11/NtpClient) of [Germán Martín](https://github.com/gmag11).
+
+# Disclaimer
+
 The [SNTP](https://tools.ietf.org/html/rfc4330) protocol is a simple implementation of the [NTP](https://tools.ietf.org/html/rfc5905) protocol, therefore disregarding time drift values and using simplified ways of system clock adjustment methods. Hence, complete accuracy and reliability can not be guaranteed however time synchronization in the range of 1 to 2 seconds is achievable.
 
 This NTPClient library is designed for the ESP8266 device only. Other [MCU](https://en.wikipedia.org/wiki/Microcontroller) like Arduino, etc. are not supported.
 
 [DST](https://en.wikipedia.org/wiki/Daylight_saving_time) is currently not supported. The use of DST varies by region or country and can also change over time.
 
-## Dependencies
+# Dependencies
+
 This library makes use of the [Time](https://github.com/PaulStoffregen/Time.git) library. You need to add it to use this NTPClient.
 
-## Contributing
+# Contributing
 
 Contributions are encouraged and welcome; we are always happy to get feedback or pull requests on Github :)
 
-## License
+# License
 
-The NTPClient library is open-sourced software licensed under the [MIT license](http://opensource.org/licenses/MIT).
-For the full copyright and license information, please see the [LICENSE](LICENSE.md) file that was distributed with this source code.
+The NTPClient library is open-sourced software licensed under the [MIT license](http://opensource.org/licenses/MIT). For the full copyright and license information, please see the [LICENSE](LICENSE.md) file that was distributed with this source code.
