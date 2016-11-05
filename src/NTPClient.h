@@ -118,7 +118,7 @@ public:
          * @param  utcOffset the UTC Offset to use (i.e. timezone). If empty, UTC will be used.
          * @return           true if successful
          */
-        bool init(char *server = DEFAULT_NTP_SERVER, tz_utc_offsets_t utcOffset = UTC);
+        bool init(char *server = (char *)DEFAULT_NTP_SERVER, tz_utc_offsets_t utcOffset = UTC);
 
         /**
          * @brief Stops the time synchronization
