@@ -37,7 +37,7 @@ This library makes use of the [Time](https://github.com/PaulStoffregen/Time.git)
 
 # Contributing
 
-Contributions are encouraged and welcome; we are always happy to get feedback or pull requests on Github :)
+Contributions are encouraged and welcome; I am always happy to get feedback or pull requests on Github :)
 
 # License
 
