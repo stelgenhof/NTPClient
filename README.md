@@ -1,1 +1,41 @@
-# NTPClient
+## NTPClient
+
+A simple and small NTP Client library to have date and time on your ESP8266 device synchronized periodically, supporting timezones.
+
+For Internet connected devices like the ESP8266, Arduino, etc. having a correct time and date for your project can be essential. For these devices plenty of good NTP libraries are available, however most of these contain too many  features. In addition, supporting timezones (i.e. UTC offsets) are often implemented poorly.
+
+This NTPClient library makes use of the internal Espressif SDK routines for the built in SNTP API, allowing this client to be small and simple. Unfortunately the timezone implementation of the SNTP API is limited in that only UTC offsets between -11 and 13 hour offsets can be used. Currently UTC offsets range from -12 to 14 hours including some timezones that are not a full hour (e.g. 05:30, 05:45). This NTPClient library overcomes that and fully supports all known timezones.
+
+Using the NTPClient library is very straightforward and simple. Include this NTPClient library in your project and start the synchronization by calling the `NTP.init` function. You can use it without any parameters (defaults will be used) or adjust to your liking. It is recommended to use a NTP server closer to your location and the appropriate timezone (i.e. UTC offset). Please refer to the header file for the full list of UTC offsets.
+
+By default a polling interval of 30 minutes is used for synchronizing with the NTP server. You may adjust this by using the `NTP.setPollingInterval(interval)` function, where `interval` is the desired interval in seconds.
+
+To keep the NTPClient library small, no functions other than `NTP.getTimeDate(time_t _time)` are implemented that output time and date in a human readable format. The `NTP.getTimeDate(time_t _time)` will render the given time in [ISO8601](https://en.wikipedia.org/wiki/ISO_8601) format.
+
+For more advanced use, a callback function may be used to handle some events emitted by the NTPClient library. The following events are currently implemented:
+
+- NTP_EVENT_INIT: Issued upon start of the synchronization.
+- NTP_EVENT_STOP: Issued when the synchronization is stopped.
+- NTP_EVENT_NO_RESPONSE: Issued when no response is received from the NTP server.
+- NTP_EVENT_SYNCHRONIZED: Issued when time has been successfully synchronized.
+
+A full working example is included in the examples folder.
+
+## Disclaimer
+The [SNTP](https://tools.ietf.org/html/rfc4330) protocol is a simple implementation of the [NTP](https://tools.ietf.org/html/rfc5905) protocol, therefore disregarding time drift values and using simplified ways of system clock adjustment methods. Hence, complete accuracy and reliability can not be guaranteed however time synchronization in the range of 1 to 2 seconds is achievable.
+
+This NTPClient library is designed for the ESP8266 device only. Other [MCU](https://en.wikipedia.org/wiki/Microcontroller) like Arduino, etc. are not supported.
+
+[DST](https://en.wikipedia.org/wiki/Daylight_saving_time) is currently not supported. The use of DST varies by region or country and can also change over time.
+
+## Dependencies
+This library makes use of the [Time](https://github.com/PaulStoffregen/Time.git) library. You need to add it to use this NTPClient.
+
+## Contributing
+
+Contributions are encouraged and welcome; we are always happy to get feedback or pull requests on Github :)
+
+## License
+
+The NTPClient library is open-sourced software licensed under the [MIT license](http://opensource.org/licenses/MIT).
+For the full copyright and license information, please see the [LICENSE](LICENSE.md) file that was distributed with this source code.
