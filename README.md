@@ -41,4 +41,4 @@ Contributions are encouraged and welcome; I am always happy to get feedback or p
 
 # License
 
-The NTPClient library is open-sourced software licensed under the [MIT license](http://opensource.org/licenses/MIT). For the full copyright and license information, please see the [LICENSE](LICENSE.md) file that was distributed with this source code.
+The NTPClient library is open-sourced software licensed under the [MIT license](http://opensource.org/licenses/MIT). For the full copyright and license information, please see the [LICENSE](LICENSE) file that was distributed with this source code.
