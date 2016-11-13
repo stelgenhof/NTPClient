@@ -10,6 +10,10 @@
 #ifndef _NTPClient_h
 #define _NTPClient_h
 
+#ifndef ESP8266
+#error “This library only supports boards with the ESP8266 MCU.”
+#endif
+
 #include <TimeLib.h>
 #include <ESP8266WiFi.h>
 #include <Arduino.h>
