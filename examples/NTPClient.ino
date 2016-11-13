@@ -10,6 +10,9 @@
 #include <ESP8266WiFi.h>
 #include <NTPClient.h>
 
+const char *WIFI_SSID = "*****"; //  Your WiFi network SSID (name)
+const char *WIFI_PSK = "*****";  // Your WiFi network PSK (password)
+
 // Event Handler when an IP address has been assigned
 // Once connected to WiFi, start the NTP Client
 void onSTAGotIP(WiFiEventStationModeGotIP event) {
@@ -28,7 +31,7 @@ void setup() {
   static WiFiEventHandler gotIpEventHandler, disconnectedEventHandler;
 
   Serial.begin(57600);
-  Serial.setDebugOutput(true);
+  Serial.println();
 
   NTP.onSyncEvent([](NTPSyncEvent_t ntpEvent) {
     switch (ntpEvent) {
@@ -47,6 +50,15 @@ void setup() {
 
   gotIpEventHandler = WiFi.onStationModeGotIP(onSTAGotIP);
   disconnectedEventHandler = WiFi.onStationModeDisconnected(onSTADisconnected);
+
+  // Connecting to a WiFi network
+  Serial.printf("Connecting to WiFi network: %s \n", WIFI_SSID);
+  WiFi.begin(WIFI_SSID, WIFI_PSK);
+
+  while (WiFi.status() != WL_CONNECTED) {
+    delay(500);
+    Serial.print(".");
+  }
 }
 
 void loop() {
@@ -55,6 +67,11 @@ void loop() {
   // Update time status every 5 seconds
   if ((millis() - previousMillis) > 5000) {
     previousMillis = millis();
+
+    // Output only when time is set
+    if (timeStatus() != timeSet) {
+      return;
+    }
 
     Serial.printf("Current time: %s - First synchronized at: %s.\n",
                   NTP.getTimeDate(now()), NTP.getTimeDate(NTP.getFirstSync()));
