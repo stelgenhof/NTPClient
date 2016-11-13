@@ -1,10 +1,10 @@
 /*
-  This file is part of the NTPClient library.
+   This file is part of the NTPClient library.
 
-  Copyright 2016 Sacha Telgenhof (stelgenhof@gmail.com). All rights reserved.
+   Copyright 2016 Sacha Telgenhof (stelgenhof@gmail.com). All rights reserved.
 
-  For the full copyright and license information, please view the LICENSE.md
-  file that was distributed with this source code.
+   For the full copyright and license information, please view the LICENSE
+   file that was distributed with this source code.
  */
 
 #include "NTPClient.h"
