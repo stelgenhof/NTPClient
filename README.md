@@ -1,11 +1,11 @@
-## Archived
-Now that version 2.4.0 (and above) of the [ESP8266 core for Arduino](https://github.com/esp8266/Arduino) library provides proper support for timezones and DST, this library has served it's purpose and has been archived. 
+## *** Retired ***
+Now that version 2.4.0 (and above) of the [ESP8266 core for Arduino](https://github.com/esp8266/Arduino) library provides proper support for timezones and [DST](https://en.wikipedia.org/wiki/Daylight_saving_time), this library has served it's purpose and has been archived. 
 
-This library becoming obsolete is a good thing: developers write their own libraries, API's, etc simply because features in existing projects are lacking or bugs are present. These efforts are an important part of OSS: helping each other to make software better.
+This library becoming obsolete is a good thing: developers write their own libraries, API's, etc simply because features in existing projects are lacking or bugs are present. These efforts are an important part of [OSS](https://en.wikipedia.org/wiki/Open-source_software): helping each other to make software better.
 
-If you're using version 2.4.* of the ESP8266 core for Arduino library, and want to know how to implement SNTP functions in your project, checkout the [NTP-TZ-DST example](https://github.com/esp8266/Arduino/tree/master/libraries/esp8266/examples/NTP-TZ-DST).
+If you're using version 2.4.0 (or above) of the ESP8266 core for Arduino library, and want to know how to implement SNTP functions in your project, checkout the [NTP-TZ-DST example](https://github.com/esp8266/Arduino/tree/master/libraries/esp8266/examples/NTP-TZ-DST).
 
-Please use this library as an archive, a reference or as an example to learn developing ESP8266/Arduino sketches :)
+Please use this library as an archive, a reference or as an example to learn developing ESP8266/Arduino sketches/libraries :)
 
 
 # NTPClient
