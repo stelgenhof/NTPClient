@@ -1,3 +1,13 @@
+## Archived
+Now that version 2.4.0 (and above) of the [ESP8266 core for Arduino](https://github.com/esp8266/Arduino) library provides proper support for timezones and DST, this library has served it's purpose and has been archived. 
+
+This library becoming obsolete is a good thing: developers write their own libraries, API's, etc simply because features in existing projects are lacking or bugs are present. These efforts are an important part of OSS: helping each other to make software better.
+
+If you're using version 2.4.* of the ESP8266 core for Arduino library, and want to know how to implement SNTP functions in your project, checkout the [NTP-TZ-DST example](https://github.com/esp8266/Arduino/tree/master/libraries/esp8266/examples/NTP-TZ-DST).
+
+Please use this library as an archive, a reference or as an example to learn developing ESP8266/Arduino sketches :)
+
+
 # NTPClient
 
 A simple and small NTP Client library to have date and time on your ESP8266 device synchronized periodically, supporting timezones.
@@ -31,7 +41,9 @@ This NTPClient library is designed for the ESP8266 device only. Other [MCU](http
 
 [DST](https://en.wikipedia.org/wiki/Daylight_saving_time) is currently not supported. The use of DST varies by region or country and can also change over time.
 
-# Dependencies
+# Requirements/Dependencies
+
+You will need version 2.3.0 of the [ESP8266 core for Arduino](https://github.com/esp8266/Arduino) library. Any newer versions are known to work however with some issues.
 
 This library makes use of the [Time](https://github.com/PaulStoffregen/Time.git) library. You need to add it to use this NTPClient.
 
